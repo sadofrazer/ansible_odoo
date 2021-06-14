@@ -1,0 +1,104 @@
+#Tasks of our roles
+- name: Install EPEL repo
+  package: 
+    name: "{{ item }}"
+    state: present
+  when: ansible_distribution == "CentOS"
+  loop:
+    - epel-release
+
+- name: download pip script
+  get_url:
+    url: https://bootstrap.pypa.io/pip/2.7/get-pip.py
+    dest: /tmp/get-pip.py
+
+- name: install python-pip
+  command: python2.7 /tmp/get-pip.py
+
+- name: Install docker python
+  pip: 
+    name:
+      docker-py
+
+- name: create odoo_files
+  file:
+    path: "/home/{{ ansible_user }}/odoo"
+    state: directory
+
+#///////////////////////1///////////////////////////
+
+- name: set variable company_name
+  set_fact:
+    company_name: "{{ compagny_name1 }}"
+    db_user: "{{ db1_user }}"
+    db_pass: "{{ db1_pass }}"
+    cpy_port: "{{ cpy1_port }}"
+  when: db_qty > 0
+
+- name: generate odoo_config_file 
+  template:
+    src: "odoo.conf.j2"
+    dest: "/home/{{ ansible_user }}/odoo/o_config/{{ company_name }}.conf"
+    when: db_qty > 0
+
+- name: generate docker-compose_file 
+  template:
+    src: "docker-compose.yml.j2"
+    dest: "/home/{{ ansible_user }}/odoo/docker-compose-{{ company_name }}.yml"
+    when: db_qty > 0
+
+- name: "Deploy apps"
+  command: "docker-compose up -d -f /home/{{ ansible_user }}/odoo/docker-compose-{{ company_name }}.yml "
+  when: db_qty > 0
+
+#/////////////////////2////////////////////////////
+
+- name: set variable company_name
+  set_fact:
+    company_name: "{{ compagny_name2 }}"
+    db_user: "{{ db2_user }}"
+    db_pass: "{{ db2_pass }}"
+    cpy_port: "{{ cpy2_port }}"
+  when: db_qty > 1
+
+- name: generate odoo_config_file 
+  template:
+    src: "odoo.conf.j2"
+    dest: "/home/{{ ansible_user }}/odoo/o_config/{{ company_name }}.conf"
+    when: db_qty > 1
+
+- name: generate docker-compose_file 
+  template:
+    src: "docker-compose.yml.j2"
+    dest: "/home/{{ ansible_user }}/odoo/docker-compose-{{ company_name }}.yml"
+    when: db_qty > 1
+
+- name: "Deploy apps"
+  command: "docker-compose up -d -f /home/{{ ansible_user }}/odoo/docker-compose-{{ company_name }}.yml "
+  when: db_qty > 1
+
+#/////////////////////3////////////////////////////
+
+- name: set variable company_name
+  set_fact:
+    company_name: "{{ compagny_name2 }}"
+    db_user: "{{ db3_user }}"
+    db_pass: "{{ db3_pass }}"
+    cpy_port: "{{ cpy3_port }}"
+  when: db_qty > 2
+
+- name: generate odoo_config_file 
+  template:
+    src: "odoo.conf.j2"
+    dest: "/home/{{ ansible_user }}/odoo/o_config/{{ company_name }}.conf"
+    when: db_qty > 2
+
+- name: generate docker-compose_file 
+  template:
+    src: "docker-compose.yml.j2"
+    dest: "/home/{{ ansible_user }}/odoo/docker-compose-{{ company_name }}.yml"
+    when: db_qty > 2
+
+- name: "Deploy apps"
+  command: "docker-compose up -d -f /home/{{ ansible_user }}/odoo/docker-compose-{{ company_name }}.yml "
+  when: db_qty > 2
