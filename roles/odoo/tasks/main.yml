@@ -40,13 +40,13 @@
   template:
     src: "odoo.conf.j2"
     dest: "/home/{{ ansible_user }}/odoo/o_config/{{ company_name }}.conf"
-    when: db_qty > 0
+  when: db_qty > 0
 
 - name: generate docker-compose_file 
   template:
     src: "docker-compose.yml.j2"
     dest: "/home/{{ ansible_user }}/odoo/docker-compose-{{ company_name }}.yml"
-    when: db_qty > 0
+  when: db_qty > 0
 
 - name: "Deploy apps"
   command: "docker-compose up -d -f /home/{{ ansible_user }}/odoo/docker-compose-{{ company_name }}.yml "
@@ -66,13 +66,13 @@
   template:
     src: "odoo.conf.j2"
     dest: "/home/{{ ansible_user }}/odoo/o_config/{{ company_name }}.conf"
-    when: db_qty > 1
+  when: db_qty > 1
 
 - name: generate docker-compose_file 
   template:
     src: "docker-compose.yml.j2"
     dest: "/home/{{ ansible_user }}/odoo/docker-compose-{{ company_name }}.yml"
-    when: db_qty > 1
+  when: db_qty > 1
 
 - name: "Deploy apps"
   command: "docker-compose up -d -f /home/{{ ansible_user }}/odoo/docker-compose-{{ company_name }}.yml "
@@ -92,13 +92,13 @@
   template:
     src: "odoo.conf.j2"
     dest: "/home/{{ ansible_user }}/odoo/o_config/{{ company_name }}.conf"
-    when: db_qty > 2
+  when: db_qty > 2
 
 - name: generate docker-compose_file 
   template:
     src: "docker-compose.yml.j2"
     dest: "/home/{{ ansible_user }}/odoo/docker-compose-{{ company_name }}.yml"
-    when: db_qty > 2
+  when: db_qty > 2
 
 - name: "Deploy apps"
   command: "docker-compose up -d -f /home/{{ ansible_user }}/odoo/docker-compose-{{ company_name }}.yml "
