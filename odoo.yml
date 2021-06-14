@@ -4,6 +4,6 @@
   vars_files:
     - files/secrets/credentials.yml
   roles:
-    - geerlingguy.pip
-    - geerlingguy.docker
+    #- geerlingguy.pip
+    #- geerlingguy.docker
     - odoo

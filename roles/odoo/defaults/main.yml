@@ -10,9 +10,9 @@ cpy3_port: 8082
 db1_user: odoo
 db2_user: odoo
 db3_user: odoo 
-db_pass1: odoo
-db_pass2: odoo
-db_pass3: odoo
+db1_pass: odoo
+db2_pass: odoo
+db3_pass: odoo
 #possibility to configure simultaneous one, two or 3 BDD
 db_qty: 3
 list_db: False
