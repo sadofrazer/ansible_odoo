@@ -29,7 +29,7 @@
 
 - name: set variable company_name
   set_fact:
-    company_name: "{{ compagny_name1 }}"
+    company_name: "{{ company_name1 }}"
     db_user: "{{ db1_user }}"
     db_pass: "{{ db1_pass }}"
     cpy_port: "{{ cpy1_port }}"
@@ -55,7 +55,7 @@
 
 - name: set variable company_name
   set_fact:
-    company_name: "{{ compagny_name2 }}"
+    company_name: "{{ company_name2 }}"
     db_user: "{{ db2_user }}"
     db_pass: "{{ db2_pass }}"
     cpy_port: "{{ cpy2_port }}"
@@ -81,7 +81,7 @@
 
 - name: set variable company_name
   set_fact:
-    company_name: "{{ compagny_name2 }}"
+    company_name: "{{ company_name3 }}"
     db_user: "{{ db3_user }}"
     db_pass: "{{ db3_pass }}"
     cpy_port: "{{ cpy3_port }}"
