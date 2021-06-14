@@ -22,7 +22,8 @@
 
 - name: create odoo_files
   file:
-    path: "/home/{{ ansible_user }}/odoo"
+    path: "/home/{{ ansible_user }}/odoo/o_config/"
+    recurse: yes
     state: directory
 
 #///////////////////////1///////////////////////////
