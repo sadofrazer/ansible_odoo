@@ -10,7 +10,7 @@ services:
     environment:
       - HOST="{{ company_name }}_db"
       - USER="{{ db_user }}"
-      - PASSWORD={{ db_pass" }}
+      - PASSWORD="{{ db_pass }}"
       - PORT=5432
     volumes:
       - "{{ company_name }}-web-data":/var/lib/odoo
