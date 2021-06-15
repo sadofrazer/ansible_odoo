@@ -1,4 +1,4 @@
-# Ansible Role: Docker for ARM
+# Ansible Role: Odoo for Labs or training
 
 [![CI](icones/odoo_icon-100.png)](https://github.com/sadofrazer/ansible_odoo/tree/v1.0)
 
