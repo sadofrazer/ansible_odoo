@@ -8,7 +8,7 @@ services:
     ports:
       - "{{ cpy_port }}:8069"
     environment:
-      - HOST="{{ company_name }}_db"
+      - HOST={{ company_name }}_db
       - USER="{{ db_user }}"
       - PASSWORD="{{ db_pass }}"
       - PORT=5432
