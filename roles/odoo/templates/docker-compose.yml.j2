@@ -1,10 +1,10 @@
 version: '2'
 services:
-  ${{ company_name }}_web:
+  {{ company_name }}_web:
     image: odoo
     container_name: "{{ company_name }}_odoo_web"
     depends_on:
-      - ${{ company_name }}_db
+      - {{ company_name }}_db
     ports:
       - "{{ cpy_port }}:8069"
     environment:
@@ -13,12 +13,12 @@ services:
       - PASSWORD="{{ db_pass }}"
       - PORT=5432
     volumes:
-      - ${{ company_name }}-web-data:/var/lib/odoo
-      - /home/${{ ansible_user }}/odoo/o_config/${{ company_name }}.conf:/etc/odoo/odoo.conf
+      - {{ company_name }}-web-data:/var/lib/odoo
+      - /home/{{ ansible_user }}/odoo/o_config/{{ company_name }}.conf:/etc/odoo/odoo.conf
     networks:
-      - ${{ administrator }}-network
+      - {{ administrator }}-network
 
-  ${{ company_name }_db:
+  {{ company_name }}_db:
     image: postgres:10
     container_name: "{{ company_name }}_odoo_db"
     environment:
@@ -27,13 +27,13 @@ services:
       - POSTGRES_USER="{{ db_user }}"
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - ${{ company_name }}-db-data:/var/lib/postgresql/data/pgdata
+      - {{ company_name }}-db-data:/var/lib/postgresql/data/pgdata
     networks:
-      - ${{ administrator }}-network
+      - {{ administrator }}-network
 
 networks:
-  ${{ administrator }}-network:
+  {{ administrator }}-network:
 
 volumes:
-  ${{ company_name }}-web-data:
-  ${{ company_name }}-db-data:
+  {{ company_name }}-web-data:
+  {{ company_name }}-db-data:
