@@ -28,7 +28,7 @@
 
 #///////////////////////1///////////////////////////
 
-- name: set variable company_name
+- name: set variable company_name for company 1
   set_fact:
     company_name: "{{ company_name1 }}"
     db_user: "{{ db1_user }}"
@@ -36,19 +36,19 @@
     cpy_port: "{{ cpy1_port }}"
   when: db_qty > 0
 
-- name: generate odoo_config_file 
+- name: generate odoo_config_file for company 1
   template:
     src: "odoo.conf.j2"
     dest: "/home/{{ ansible_user }}/odoo/o_config/{{ company_name }}.conf"
   when: db_qty > 0
 
-- name: generate docker-compose_file 
+- name: generate docker-compose_file for company 1
   template:
     src: "docker-compose.yml.j2"
     dest: "/home/{{ ansible_user }}/odoo/docker-compose.yml"
   when: db_qty > 0
 
-- name: "Deploy apps"
+- name: "Deploy apps for company 1"
   command: "docker-compose up -d"
   args:
     chdir: "/home/{{ ansible_user }}/odoo"
@@ -56,7 +56,7 @@
 
 #/////////////////////2////////////////////////////
 
-- name: set variable company_name
+- name: set variable company_name for company 2
   set_fact:
     company_name: "{{ company_name2 }}"
     db_user: "{{ db2_user }}"
@@ -64,19 +64,19 @@
     cpy_port: "{{ cpy2_port }}"
   when: db_qty > 1
 
-- name: generate odoo_config_file 
+- name: generate odoo_config_file for company 2
   template:
     src: "odoo.conf.j2"
     dest: "/home/{{ ansible_user }}/odoo/o_config/{{ company_name }}.conf"
   when: db_qty > 1
 
-- name: generate docker-compose_file 
+- name: generate docker-compose_file for company 2
   template:
     src: "docker-compose.yml.j2"
     dest: "/home/{{ ansible_user }}/odoo/docker-compose.yml"
   when: db_qty > 1
 
-- name: "Deploy apps"
+- name: "Deploy apps for company 2"
   command: "docker-compose up -d"
   args:
     chdir: "/home/{{ ansible_user }}/odoo"
@@ -84,7 +84,7 @@
 
 #/////////////////////3////////////////////////////
 
-- name: set variable company_name
+- name: set variables for company 3 
   set_fact:
     company_name: "{{ company_name3 }}"
     db_user: "{{ db3_user }}"
@@ -92,19 +92,19 @@
     cpy_port: "{{ cpy3_port }}"
   when: db_qty > 2
 
-- name: generate odoo_config_file 
+- name: generate odoo_config_file for company 3
   template:
     src: "odoo.conf.j2"
     dest: "/home/{{ ansible_user }}/odoo/o_config/{{ company_name }}.conf"
   when: db_qty > 2
 
-- name: generate docker-compose_file 
+- name: generate docker-compose_file for company 3
   template:
     src: "docker-compose.yml.j2"
     dest: "/home/{{ ansible_user }}/odoo/docker-compose.yml"
   when: db_qty > 2
 
-- name: "Deploy apps"
+- name: "Deploy apps for company 3"
   command: "docker-compose up -d"
   args:
     chdir: "/home/{{ ansible_user }}/odoo"

@@ -3,7 +3,7 @@ administrator: Frazer
 my_ansible_user: admin
 company_name1: INTEGRAL
 company_name2: SERVITEL
-company_name: TOTAL
+company_name3: TOTAL
 cpy1_port: 8080
 cpy2_port: 8081
 cpy3_port: 8082
@@ -15,5 +15,5 @@ db2_pass: odoo
 db3_pass: odoo
 #possibility to configure simultaneous one, two or 3 BDD
 db_qty: 3
-list_db: False
+list_db: True
 
