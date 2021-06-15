@@ -2,7 +2,7 @@
 
 [![CI](icones/odoo_icon-100.png)](https://github.com/sadofrazer/ansible_odoo/tree/v1.0)
 
-An Ansible Role that installs up to three [odoo] (https://www.odoo.com) instances on Linux , specially tailored for CentOS Distribution
+An Ansible Role that installs up to three [odoo](https://www.odoo.com) instances on Linux , specially tailored for CentOS Distribution
 
 If you need a more flexible and generic role for deploying simultaneous 3 odoo instances for labs or any other needs, check out [`sadofrazer.ansible_odoo`](https://github.com/sadofrazer/ansible_odoo.git).
 
