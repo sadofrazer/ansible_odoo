@@ -18,28 +18,31 @@ The administrator who realize the deploy
 
     administrator: Frazer
 
-The compagny name for our 3 instances, uses to create ressources which are link to a specific company
+The Instance 1 variables, uses to create ressources of this specific odoo instance
 
-    company_name1: INTEGRAL
-    company_name2: SERVITEL
-    company_name3: TOTAL
+    instance_1:
+      name: INTEGRAL
+      port: 8080
+      db_user: odoo
+      db_pass: odoo 
 
 
-The list of external port to expose the odoo web app for our 3 instances    
+The Instance 2 variables, uses to create ressources of this specific odoo instance    
     
-    cpy1_port: 8080
-    cpy2_port: 8081
-    cpy3_port: 8082
+    instance_2:
+      name: INTEGRAL
+      port: 8080
+      db_user: odoo
+      db_pass: odoo
 
 
-DB User and Password for each of our instances
+The Instance 2 variables, uses to create ressources of this specific odoo instance
   
-    db1_user: odoo
-    db2_user: odoo
-    db3_user: odoo 
-    db1_pass: odoo
-    db2_pass: odoo
-    db3_pass: odoo
+    instance_3:
+      name: INTEGRAL
+      port: 8080
+      db_user: odoo
+      db_pass: odoo
 
 
 Specify the number of instances you need to deploy (`can be 1, 2 or 3`)    
