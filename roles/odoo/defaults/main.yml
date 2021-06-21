@@ -16,7 +16,7 @@ instance_2:
 
 instance_3:
   name: SERVITEL
-  port: 8083
+  port: 8082
   db_user: odoo
   db_pass: odoo
 
