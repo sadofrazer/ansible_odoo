@@ -86,7 +86,7 @@
 
 - name: set variables for company 3 
   set_fact:
-    company_name: "{{ instance_3.company_name }}"
+    company_name: "{{ instance_3.name }}"
     db_user: "{{ instance_3.db_user }}"
     db_pass: "{{ instance_3.db_pass }}"
     cpy_port: "{{ instance_3.port }}"
