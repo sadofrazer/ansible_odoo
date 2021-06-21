@@ -49,9 +49,9 @@
   when: db_qty > 0
 
 - name: "Deploy apps for company 1"
-  community.docker.docker_compose:
-    project_src: "/home/{{ ansible_user }}/odoo"
-  register: output
+  command: "docker-compose up -d"
+  args:
+    chdir: "/home/{{ ansible_user }}/odoo"
   when: db_qty > 0
 
 #/////////////////////2////////////////////////////
@@ -77,9 +77,9 @@
   when: db_qty > 1
 
 - name: "Deploy apps for company 2"
-  community.docker.docker_compose:
-    project_src: "/home/{{ ansible_user }}/odoo"
-  register: output
+  command: "docker-compose up -d"
+  args:
+    chdir: "/home/{{ ansible_user }}/odoo"
   when: db_qty > 1
 
 #/////////////////////3////////////////////////////
@@ -105,7 +105,7 @@
   when: db_qty > 2
 
 - name: "Deploy apps for company 1"
-  community.docker.docker_compose:
-    project_src: "/home/{{ ansible_user }}/odoo"
-  register: output
+  command: "docker-compose up -d"
+  args:
+    chdir: "/home/{{ ansible_user }}/odoo"
   when: db_qty > 2
