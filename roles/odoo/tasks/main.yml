@@ -104,7 +104,7 @@
     dest: "/home/{{ ansible_user }}/odoo/docker-compose.yml"
   when: db_qty > 2
 
-- name: "Deploy apps for company 1"
+- name: "Deploy apps for company 3"
   command: "docker-compose up -d"
   args:
     chdir: "/home/{{ ansible_user }}/odoo"
