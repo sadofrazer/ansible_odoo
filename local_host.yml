@@ -8,4 +8,4 @@ Prod:
       ansible_host: localhost
       db_qty: 1
       ansible_connection: local
-      ansible_sudo_pass: ubuntu
+      ansible_sudo_pass: "definir"
