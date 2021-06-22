@@ -1,23 +1,23 @@
 #Tasks of our roles
-- name: Install EPEL repo
-  package: 
-    name: "{{ item }}"
-    state: present
-  when: ansible_distribution == "CentOS"
-  loop:
-    - epel-release
+# - name: Install EPEL repo
+#   package: 
+#     name: "{{ item }}"
+#     state: present
+#   when: ansible_distribution == "CentOS"
+#   loop:
+#     - epel-release
 
-- name: install python-pip
-  package: 
-    name: python3-pip
-    state: present 
+# - name: install python-pip
+#   package: 
+#     name: python3-pip
+#     state: present 
 
-- name: Install docker python
-  pip: 
-    name:
-      docker-py
-    executable: pip3
-    
+# - name: Install docker python
+#   pip: 
+#     name:
+#       docker-py
+#     executable: pip3
+
 - name: create odoo_files
   file:
     path: "/home/{{ ansible_user }}/odoo/o_config/"

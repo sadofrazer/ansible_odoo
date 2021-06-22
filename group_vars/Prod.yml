@@ -1,4 +1,4 @@
 ---
-ansible_user: ubuntu
-ansible_password: ubuntu
+ansible_user: "a définir"
+ansible_password: "à définir"
 
